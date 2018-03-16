@@ -1,2 +1,2 @@
-# Create2018
-DevNet Create 2018 Workshop Requirements
+# DevNet Create 2018 Workshop Requirements
+![DevNet Create 2018](http://vtrain.cisco.com/vtrain/ezra/create.png)
