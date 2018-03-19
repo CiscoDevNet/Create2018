@@ -18,15 +18,15 @@ In order to complete this lab you will need a development workstation with Vagra
 
 ### Client Pre-Reqs
 
-*   Python
-  *   Python 2.7.10 or higher
-  *   Python 3.6.3 or higher
-  *   virtual environment (highly suggested but not required)
-  *   pip
-*   "git" command line tools
-*   Vagrant
-*   VirtualBox
-*   Homebrew (Mac OS X)
+* Python
+  * Python 2.7.10 or higher
+  * Python 3.6.3 or higher
+  * virtual environment (highly suggested but not required)
+  * pip
+* "git" command line tools
+* Vagrant
+* VirtualBox
+* Homebrew (Mac OS X)
 
 ## Workstation Setup Instructions
 
