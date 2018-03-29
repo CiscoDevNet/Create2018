@@ -1,12 +1,12 @@
 # WS9A - IOT & Edge analytics Demystified
 
 ## BYOD Requirements
-This workshop requires that you bring your own laptop (flavor, shape, size does not matter).
+This workshop requires that you bring your own laptop. Flavor, shape, or size does not matter.
 
 ## Overview
-## Description
-## Audience
-## Prerequisites
+### Description
+### Audience
+### Prerequisites
 ## Objectives
 ## Workstation Prerequisites
 
