@@ -1,3 +1,1 @@
-# WS15A - Puppet's Secret Agent(less) Approach
-
-### BYOD Requirements
+See [Rick Sherman](../Rick%20Sherman/README.md)
