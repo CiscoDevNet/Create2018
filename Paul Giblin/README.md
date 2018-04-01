@@ -21,7 +21,7 @@ During the workshop you will be interacting with a pair of switches. Without an 
 Cisco Spark is a cloud-based team messaging, meeting and calling client. You can sign up for a basic/free account if you don't have one already from http://www.ciscospark.com. Once you have an account you can also familiarize yourself with the Spark API found at http://developer.ciscospark.com.
 
 ---
-### Install Cisco Spark
+### Install Cisco Spark Client
 Cisco Spark can be consumed from the www.ciscospark.com webpage, but the experience is best had on the Windows or Mac clients. You can and should also install Spark on iOS and Android mobile devices!
 
 ---
@@ -54,9 +54,8 @@ Cisco Spark can be consumed from the www.ciscospark.com webpage, but the experie
 
 ---
 
-### Install PyCharm Community Edition (optional, but heavily recommended free IDE)
+### Install PyCharm Community Edition (free Python IDE)
 https://www.jetbrains.com/pycharm/download/
 
-### Install VENV (optional, unnecessary if you've installed PyCharm)
 
 ## Clone the repo
