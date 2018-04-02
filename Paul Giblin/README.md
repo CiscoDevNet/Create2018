@@ -54,8 +54,29 @@ Cisco Spark can be consumed from the www.ciscospark.com webpage, but the experie
 
 ---
 
+### Configure your system to connect to GitHub with SSH keys
+* https://help.github.com/articles/connecting-to-github-with-ssh/
+
+---
+
 ### Install PyCharm Community Edition (free Python IDE)
 https://www.jetbrains.com/pycharm/download/
 
+---
 
-## Clone the repo
+### Clone the repo
+`git clone git@github.com:paulgiblin/digital-project-manager.git`
+
+---
+
+### Open code as a project in PyCharm CE and configure VENV
+
+open -> select the directory -> click open
+load preferences -> project:digital-project-manager -> Project Interpreter -> select gear icon
+Make sure new Virtualenv Environment is selected, and it points to your Python 3.6 instance for the base interpreter
+Click "Install Packaging tools" if prompted
+open run.py -> banner at the head should prompt to install requirements, install them
+click the Run/Debug Configuration drop down (next to the play icon) and select edit configurations
+Click +, then Python
+Enter python3.6-dpm for the name and configure the Script Path field to point to run.py in the root directory of the project
+Click play, Flask should indicate the application is running
