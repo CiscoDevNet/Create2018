@@ -36,7 +36,7 @@ Cisco Spark can be consumed from the www.ciscospark.com webpage, but the experie
 
 * git installation - https://git-scm.com/download/mac
 
-* Python 3.6 installation - https://www.python.org/downloads/release/python-364/
+* Python 3.6.5 installation - https://www.python.org/downloads/release/python-365/
 
 * Python pip installation
 
@@ -48,7 +48,7 @@ Cisco Spark can be consumed from the www.ciscospark.com webpage, but the experie
 
 * git installation - https://git-scm.com/download/win
 
-* Python 3.6 installation - https://www.python.org/downloads/release/python-364/
+* Python 3.6.5 installation - https://www.python.org/downloads/release/python-365/
 
 * Python pip installation - https://pip.pypa.io/en/stable/installing/
 
