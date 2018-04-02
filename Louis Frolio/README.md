@@ -12,7 +12,7 @@ Goals of this Workshop:
 * Build an End-to-end (ground to cloud) IoT/Edge Analytics Scenario
 
 ### Audience
-* Intended for individuals seeking to develop an understanding of IoT and analytics at the Edge.
+Intended for individuals seeking to develop an understanding of IoT and analytics at the Edge.
 ### Prerequisites
 * Familiarity with Programming Basics (E.g Python)
 * Comfortable Working with Linux at the Command Line
