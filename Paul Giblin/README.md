@@ -27,6 +27,7 @@ Cisco Spark can be consumed from the www.ciscospark.com webpage, but the experie
 ---
 
 ### git, Python3, and pip Installation
+You will need git to obtain the code we'll be editing, and the workshop will leverage git branches to ensure everyone is able to have running code at each step along the way. The code we will be running was written in Python3, so you'll need that installed. pip is a package manager which will allow you to install the dependencies upon which our application is built. The major components we're leveraging are pysnmp, requests, Flask and SQLalchemy. Those will be installed during a later step.
 
 **Mac OS X Installation
 
@@ -71,12 +72,24 @@ https://www.jetbrains.com/pycharm/download/
 
 ### Open code as a project in PyCharm CE and configure VENV
 
-open -> select the directory -> click open
-load preferences -> project:digital-project-manager -> Project Interpreter -> select gear icon
-Make sure new Virtualenv Environment is selected, and it points to your Python 3.6 instance for the base interpreter
-Click "Install Packaging tools" if prompted
-open run.py -> banner at the head should prompt to install requirements, install them
-click the Run/Debug Configuration drop down (next to the play icon) and select edit configurations
-Click +, then Python
-Enter python3.6-dpm for the name and configure the Script Path field to point to run.py in the root directory of the project
-Click play, Flask should indicate the application is running
+* File -> Open -> select the directory -> click Open
+
+  This will open the project in PyCharm, if you did it correctly, the top level directory should have run.py in it.
+  
+* Open Preferences -> "Project:digital-project-manager" -> Project Interpreter -> click on the gear icon -> choose "Add local..."
+
+* Make sure new Virtualenv Environment is selected, and it points to your Python 3.6 instance for the base interpreter
+
+  Virtualenv is installed as part of PyCharm, but can also be run independently. Virtualenv copies the interpreter to a local directory, and any packages installed are also copied. This gives us a clean environment to work with, independent of any global configuration your operating system may have.
+  
+* Click "Install Packaging tools" if prompted
+
+* Open run.py -> banner at the head should prompt to install requirements, install them
+
+* Click the Run/Debug Configuration drop down (next to the play icon) and select edit configurations
+
+* Click +, then Python
+
+* Enter python3.6-dpm for the name and configure the Script Path field to point to run.py in the root directory of the project
+
+* Click play, Flask should indicate the application is running
