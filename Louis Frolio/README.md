@@ -1,138 +1,48 @@
 # WS9A - IOT & Edge analytics Demystified
 
 ## BYOD Requirements
-This workshop requires that you bring your own laptop. Flavor, shape, or size does not matter.
+This workshop requires that you bring your own laptop. Flavor, shape, or size does not matter so long as it can run [PuTTY](https://www.putty.org/).
 
 ## Overview
 ### Description
+Goals of this Workshop:
+
+* Educate on IoT & Edge Analytics
+* Provide Hands-on with Hardware: Sensor, Actuator, Edge Gateway Device
+* Build an End-to-end (ground to cloud) IoT/Edge Analytics Scenario
+
 ### Audience
+* Intended for individuals seeking to develop an understanding of IoT and analytics at the Edge.
 ### Prerequisites
-## Objectives
-## Workstation Prerequisites
+* Familiarity with Programming Basics (E.g Python)
+* Comfortable Working with Linux at the Command Line
+* Basic Knowledge of Docker/Containers
+* Deep Desire to Learn some Really Cool Stuff
 
-Objectives for this workshop include:
+### Workstation Prerequisites
+* Bring your Own Workstation (BYOD)
+* [PuTTY](https://www.putty.org/) Pre-Installed
+* Wifi Enabled
 
-* Provide a quick introduction to vagrant
-* Use vagrant to manage network programmability environments
-* Combine Vagrant + Ansible for full environment preparation
-* Explore how Vagrant fits into other possible NetDevOps Development Environments
+Raspberry Pi's, Environmental Sensors, and Actuators are provided for the duration of this workshop.
 
-## Prerequisites
+## Optional Pre-Work
+For the Motivated; Brush up on (It can't hurt):
 
-In order to complete this lab you will need a development workstation with Vagrant and other tools installed.  
+* [Mosquitto](http://mosquitto.org) (MQTT)
+* [Node-RED](https://nodered.org) (Flow Based Programming for IoT)
+* [DietPi](http://dietpi.com) (Minimal Debian OS)
+* [Informix](https://www.ibm.com/support/knowledgecenter/SSGU8G_12.1.0/com.ibm.welcome.doc/welcome.htm) (Just understand what it is)
+* [CC2650STK](http://processors.wiki.ti.com/index.php/CC2650_SensorTag_User's_Guide) SensorTag (Just understand what it is)
+* [Raspberry PI 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) (Just understand what it is)
 
-### Client Pre-Reqs
+## Supporting Materials
+* Lab Guide (Stay tuned)
+* Scripts (Lab solution)
+* Presentation (Stay tuned)
+* DietPi Image (Stay tuned)
 
-* Python
-  * Python 2.7.10 or higher
-  * Python 3.6.3 or higher
-  * virtual environment (highly suggested but not required)
-  * pip
-* "git" command line tools
-* Vagrant
-* VirtualBox
-* Homebrew (Mac OS X)
+## Connect with Me
+[<img src="https://upload.wikimedia.org/wikipedia/fr/thumb/c/c8/Twitter_Bird.svg/1259px-Twitter_Bird.svg.png" width="50" alt="missing" >](https://twitter.com/froliol)
 
-## Workstation Setup Instructions
-
-The labs in this module can be fully completed from an OS X or Linux workstation. Most of the labs can be completed from a Windows Workstation, however the lab combining Ansible and Vagrant cannot due to Ansible not currently being supported with Windows as a Control Server.  
-
-If you are a Windows user, it is recommended that you run a Linux VM on your laptop to execute the labs against (though you'll need a hypervisor that supports nested virtualization and note that VirtualBox does **not**).  Otherwise you can observe/watch the lesson on Vagrant/Ansible and not run locally.  
-
-To assist with completion, here are some suggested steps to prepare common platforms.
-
-### CentOS Sample Setup Instructions Example
-
-*   Standard Development Tools
-
-    ```
-    sudo yum -y groupinstall development
-    ```
-
-*   Python 3.6.2
-
-    ```
-    # CentOS 7
-    yum install -y gcc zlib-devel openssl-devel wget
-    cd /usr/src
-    wget https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tgz
-    tar xzf Python-3.6.2.tgz
-    cd Python-3.6.2
-    ./configure
-    make altinstall              
-    ```
-
-*   Python 2.7.14
-
-    ```
-    # CentOS 7
-    yum install -y gcc zlib-devel openssl-devel wget
-    cd /usr/src
-    wget https://www.python.org/ftp/python/2.7.14/Python-2.7.14.tgz
-    tar xzf Python-2.7.14.tgz
-    cd Python-2.7.14
-    ./configure
-    make altinstall
-
-    wget https://bootstrap.pypa.io/get-pip.py
-    python2.7 get-pip.py
-    ```
-
-
-*   OpenSSL Development Library
-
-    ```
-    sudo yum -y install openssl-devel
-    ```
-
-*   Vagrant and VirtualBox
-
-    ```
-    # Add yum Repos
-    wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
-    mv virtualbox.repo /etc/yum.repos.d
-    yum install -y epel-release
-
-    # Download Installation Files
-    wget https://releases.hashicorp.com/vagrant/1.9.8/vagrant_1.9.8_x86_64.rpm
-
-    # Install Dependencies
-    yum install -y kernel-devel gcc kernel-devel-3.10.0-693.2.2.el7.x86_64
-
-    # Install applications
-    yum install -y VirtualBox-5.1
-    yum install -y vagrant_1.9.8_x86_64.rpm
-    ```
-
-### Mac OS X Installation
-
-*   git installation - [https://git-scm.com/download/mac](https://git-scm.com/download/mac)
-*   Python 3.6 installation - [https://www.python.org/downloads/release/python-364/](https://www.python.org/downloads/release/python-364/)
-*   Python 2.7 installation - [https://www.python.org/downloads/release/python-2714/](https://www.python.org/downloads/release/python-2714/)
-*   Python pip installation
-
-    ```
-    curl -o get-pip.py https://bootstrap.pypa.io/get-pip.py
-    sudo -H python get-pip.py
-    ```
-
-
-*   Command Line Developer Tools Installation. After running command, complete installation using the GUI.
-
-    ```
-    xcode-select --install          
-    ```
-
-*   [Vagrant Installation](https://www.vagrantup.com/downloads.html)
-*   [VirtualBox Installation](https://www.virtualbox.org/wiki/Downloads)
-*   [Homebrew Installation](https://brew.sh)
-
-### Windows Installation
-
-*   git installation - [https://git-scm.com/download/win](https://git-scm.com/download/win)
-*   Python 3.6 installation - [https://www.python.org/downloads/release/python-364/](https://www.python.org/downloads/release/python-364/)  
-
-*   Python 2.7 installation - [https://www.python.org/downloads/release/python-2714/](https://www.python.org/downloads/release/python-2714/)  
-    **Be sure to check box for "Add Python to PATH" during the installer**
-*   [Vagrant Installation](https://www.vagrantup.com/downloads.html)
-*   [VirtualBox Installation](https://www.virtualbox.org/wiki/Downloads)
+[<img src="http://www.svemarknad.se/wp-content/uploads/2015/05/linkedin.jpg" width="50" alt="missing" >](https://www.linkedin.com/in/froliol/)
