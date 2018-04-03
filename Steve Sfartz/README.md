@@ -1,13 +1,13 @@
 # Stève's workshops at DevNet Create 2018
 
 Abstracts and **BYOD requirements**:
-- Tue Apr10, 10:15am - 11:45am: [Build a React App](#build-a-react-app) 
+- Tue Apr10, 10:15am - 11:45am: [Build a React App](#build-a-react-app-that-shows-live-activity-at-devnet-create) 
 - Tue Apr10, 05:00pm - 05:45pm: [Advanced Postman](#advanced-postman) 
-- Wed Apr11, 01:00pm - 02:45pm: [Create a Bot Game backed with NLP](#create)
+- Wed Apr11, 01:00pm - 02:45pm: [Create a Bot Game backed with NLP](#create-a-chatbot-game-backed-with-nlp)
 
 
 
-## Build a React App that Shows Live Activity at DevNet Create (WS25A)
+## Build a React App that Shows Live Activity at DevNet Create
 
 Discover React development and Cisco Collaboration Endpoints (CE9.2.1+) programmability.
 
@@ -55,6 +55,6 @@ _Pre-requisites: you have 1 to 3 years of professional development experience._
 
 A laptop with a pre-configured Node.js v6+ development environment, Cisco Spark, postman and a git client. 
 
-Here are some instructions to set up such an environment with Visual Studio Code. https://learninglabs.cisco.com/tracks/devnet-express-cloud-collab-soft-dev/devnet-express-collab-setup-sd/collab-dne-event-setup-sd/step/1
+Here are some instructions to [set up such an environment with Visual Studio Code](https://learninglabs.cisco.com/tracks/devnet-express-cloud-collab-soft-dev/devnet-express-collab-setup-sd/collab-dne-event-setup-sd/step/1). 
 
 **[Enter your Cisco Spark email to join the workshop chat](https://eurl.io/#H187WZZof)**
