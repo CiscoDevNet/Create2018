@@ -1,0 +1,38 @@
+<h1 id="hello_redis">Hello Redis</h1>
+
+<p>This directory contains an optional exercise for those of you not familiar with Redis,
+building the classic Hello World with a Redis twist.  In this exercise, you will create a
+Hello Redis program which connects to Redis, writes a message to the database, reads that
+message back, then displays the message to the end user.  After that you will modify the
+program to add a  counter to track the number of times the program executes.</p>
+
+<p>The files <code>hello_redis.py</code> is a skeleton program to get you started.  It provides and explains
+the boilerplate code needed to set up a connection to Redis.  If you get stuck
+<code>hello_redis_solution.py</code> implements a solution to the exercise.  Feel free to study it or get
+help from the training staff.</p>
+
+<h2 id="part_one_hello_redis">Part One: Hello Redis</h2>
+
+<h3 id="instructions">Instructions</h3>
+
+<ol>
+<li>Prior to modifying <code>hello_redis.py</code>, run the program and see what happens</li>
+<li>Add code to the program to store a Hello World message in Redis</li>
+<li>Modify the code that prints the message to read the message from Redis instead of a constant string</li>
+</ol>
+
+<h3 id="further_activities">Further Activities</h3>
+
+<ol>
+<li>Do you understand what the function of the <code>decode_response</code> flag?</li>
+<li>Try running the program with <code>decode_response=false</code>.  What happens?</li>
+</ol>
+
+<h2 id="part_two">Part Two:</h2>
+
+<h3 id="instructions">Instructions</h3>
+
+<ol>
+<li>Add code to <code>hello_redis.py</code> to track how often the program runs</li>
+<li>Uncomment the code to print the run count message and modify to use the value from Redis</li>
+</ol>
