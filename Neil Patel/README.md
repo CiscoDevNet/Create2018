@@ -5,10 +5,13 @@ Hey Everyone! Welcome to Security Research and Response Workflows!
 Wanted to take a moment to give you guys some context around what you will need to do this workshop with me.
 
 ### BYOD Requirements
-Windows or Mac personal computer
-Postman installed - https://www.getpostman.com/
-Python 2.7.x installed - https://www.python.org/ftp/python/2.7.14/
-Requests library for python - http://docs.python-requests.org/en/master/
+> Windows or Mac personal computer
+
+> Postman installed - https://www.getpostman.com/ 
+
+> Python 2.7.x installed - https://www.python.org/ftp/python/2.7.14/ 
+
+> Requests library for python - http://docs.python-requests.org/en/master/ 
 
 For those of you who prefer python 3.x You are welcome to use it there may be moderate difference in how the example scritps work though nothing too serious. 
 
