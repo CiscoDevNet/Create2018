@@ -12,6 +12,6 @@ Other common use cases include indoor wayfinding and proximity messaging. We enc
 # Prerequisites
 
 * MacBook laptop highly recommended. Otherwise attendees will not be able to do the exercises on their own.
-* Latest Xcode (_9.3_) installed ahead of workshipo.
+* Latest Xcode (_9.3_) installed ahead of workshop.
 * Recommended [CocoaPods](https://cocoapods.org/) installed ahead of workshop. Session will review how to install.
 * Materials for workshop can be dowloaded from [https://cisco.box.com/v/harveydelery-create-2018](https://cisco.box.com/v/harveydelery-create-2018)
