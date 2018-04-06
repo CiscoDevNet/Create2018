@@ -26,7 +26,7 @@ Docker:
 
 ### BYOD Requirements
 
-## Attendance at WS2B - Getting Started w OpenFaaS PART 1
+## Please Attend the WS2B - Getting Started w OpenFaaS PART 1 workshop... the below requirements are the same as Part 1 as well.
 
 We walk through how to install these requirements in [Lab 1](./lab1.md), but please do this before you attend an instructor-led workshop.
 
