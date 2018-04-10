@@ -62,7 +62,7 @@ Use the configurator to inject the Meraki floorplan config to your Mapwize venue
 
 Go to [Mapwize Studio](https://studio.mapwize.io), enter your venue and go to the Layers section. You'll see that a "Meraki - xx" layer has been created. That's the image that was used in Meraki, positionned precisely like in the Meraki portal.
 
-As Meraki does not support proper configuration of floors in the Meraki Portal, you'll need to manually edit the layer and set floor=2. Also, toggle the publish status to true. And save.
+As Meraki does not support proper configuration of floors in the Meraki Portal, you'll need to manually edit the layer and **set floor=2**. Also, **toggle the publish status to true** and **select the default universe**. And save.
 
 Here the event is on a single floor but of course multiple floor buildings would be as easily supported.
 
@@ -94,20 +94,9 @@ Assuming your Redis server is running with default configuration (localhost:6379
 
   * FLOOR_PLANS: copy paste the content of the JSON file produced by the `configureFromMapwize` command
   * MAC_ADDRESS_ENABLED: true (better for the asset tracking cases)
-  * SECRET: "devnetcreate2018"
   * VALIDATOR: "devnetcreate2018"
 
 By default, your listener will be running on `localhost:3004`.
-
-Note:
-To correctly serialize the Meraki configuration, you can execute
-```
-export FLOOR_PLANS=$(node -e 'var json = require("FILEPATH"); console.log(JSON.stringify(json));')
-```
-Or if you want to put this variable into your clipboard instead to paste it in the config file, please execute
-```
-node -e 'var json = require("FILEPATH"); console.log(JSON.stringify(json));' | pbcopy
-```
 
 And now you can start the listener server with
 
@@ -133,7 +122,7 @@ And start the client using
 SERVER=[THE BROADCAST SERVER URL] node client.js
 ```
 
-Everytime a notification is received by the boradcast server, your broadcast client will make the same post request to your Meraki listener server. If your Meraki listener server is not running on `localhost:3004`, you'll need to use the `POSTTO` environment variable to configure it.
+Everytime a notification is received by the broadcast server, your broadcast client will make the same post request to your Meraki listener server. If your Meraki listener server is not running on `localhost:3004`, you'll need to use the `POSTTO` environment variable to configure it.
 
 Now you should start receiving notifications and your Redis database will be populated with locations.
 
@@ -177,7 +166,15 @@ Then, inside your venue, head to the URL generator and create an URL to see your
 
 Open the link in your browser and you should be able to see the map of DevNet Create. But your location is not on it yet.
 
-To do so, add the `indoorLocationSocketUrl` and `indoorLocationUserId` parameters to your URL. It should look like this:
+To do so, you'll need to add the `indoorLocationSocketUrl` and `indoorLocationUserId` parameters to your URL. Since maps.mapwize.io is served using https, using `localhost` as socket url will not work. Therefore you need to use `ngrok`. Ngrok will create a tunnel to your local machine that is available from the cloud. Run
+
+```
+ngrok http 3003
+```
+
+and use the address provided by ngrok. You need to keep ngrok running on your maching for the connection to be maintained.
+
+The complete URL to type in your browser should look like this:
 
 ```
 https://maps.mapwize.io/#/v/[VENUE_ALIAS]?k=[ACCESS_KEY]&indoorLocationSocketUrl=localhost:3003& indoorLocationUserId=[YOUR_LOCAL_IP_OR_MAC]
@@ -202,14 +199,6 @@ You will need to set your credentials in SocketIndoorLocationProviderDemoApp and
 * Set the URL of your emitter server in MapActivity on line 48. (see below)
 
 In order to see your venue in the app, you'll need to add the rights on your API key. To do so, go to [Mapwize Studio](https://studio.mapwize.io) and then to "API keys". Edit the API key you already have and add your access group in it.
-
-Using `localhost` in your app as socket URL is not going to work. The best option to solve that is to use `ngrok`. Ngrok will create a tunnel to your local machine that is available from the cloud. Run
-
-```
-ngrok http 3003
-```
-
-and use the address provided by ngrok in your app. You need to keep ngrok running on your maching for the connection to be maintained.
 
 On mobile, your locap IP address is used automatically to fetch your position. Therefore, **your device must be connected to the Meraki network**. Ask me for credentials.
 
@@ -244,7 +233,7 @@ The source code of the Mapwize app is available for
 
 So far, you have seen how to retrieve locations and see them on a map. There are a lot of use cases where you would like to track assests and get notified when they move, enter or leave certains areas etc. Think about medical material in a hospital, or goods in logistics, or kids in shopping malls. Ok, kids are not really assests but you get the point :-)
 
-## Get a notification on Spark if an asset enters or leaves an area
+### Get a notification on Spark if an asset enters or leaves an area
 
 Since an emitter server is available to share device positions, we are going to use it again and connect it to an alerter.
 
@@ -254,6 +243,33 @@ Navigate to [developer.ciscospark.com/getting-started.html](https://developer.ci
 
 Then go to [Mapwize Studio](https://studio.mapwize.io), enter your venue, and go to "Places". Use the polygon tool on the top left of the map to create a polygonal place. Click on the map to create the polygon edges and close the polygon cliking on the first point again. Give a name to your place and select a place type (you can choose anything, it doesn't matter). Save your place. Then edit it to view it's id all the way at the end of the edition window.
 
-**The code of the alerter is being finalized and will be published soon**.
+The code of the alerter is available as part of the IndoorLocation framework at [github.com/IndoorLocation/indoor-location-alerter](https://github.com/IndoorLocation/indoor-location-alerter)
 
-Further instructions will follow.
+Clone the repository
+
+```
+git clone https://github.com/IndoorLocation/indoor-location-alerter
+```
+
+And start it using the following parameters
+
+- `USER_ID`: The IP or Mac you want to track
+- `MAPWIZE_API_KEY`: Your Mapwize API KEY
+- `MAPWIZE_PLACE_ID`: Mapwize Place ID that represents the area
+- `CISCO_SPARK_TOKEN`: CISCO Spark user token
+- `CISCO_SPARK_TO_PERSON_EMAIL`: email address to send private messages to in Spark
+
+```
+npm start
+```
+
+Now you will receive a notification every time the tracked device enters or leaves the designated area.
+
+## Thanks
+
+Thanks for following this workshop.
+
+Don't hesitate to contact me if you have any question or would like to go further.
+
+Happy coding
+Mathieu
