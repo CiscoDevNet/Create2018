@@ -1,33 +1,42 @@
 # WS17A -  NetDevOps Engineer Everyday Skills 
 
-### BYOD Requirements
 
-This worskhop will require you to bring a laptop with Python 2.7 and 3.x installed. You will need the requests and ncclient Python libraries. 
+### NetDevOps Engineer Everyday Skills
 
-During the workshop you will need these accounts:
- - DevNet account
- - CiscoSpark account
- - Developer Service Now account (optional)
+This repo will include all the files needed for the DevNet Create 2018 Workshop:
+https://github.com/gzapodea/DevNet_Create_2018
 
-### Skills
 
-The application will require familiarity with:
- - Cisco CLI
- - Embedded Event Manager
- - IOS XE Guest Shell
- - YANG and NETCONF/RESTCONF
- - basic Linux and a text editor skills
- - basic knowledge of git operations
+Do you want to learn how to write simple ChatOps apps for IOS XE network devices? This session will explore a few IOS XE device programmability capabilities to help you create your first ChatOps application using NETCONF, RESTCONF, and Guest Shell.
 
-### Lab Equipment
+### This workshop requires:
 
-You will be provided a sandbox that will include a CSR1000V router that you will use to create a ChaOps application.
-You will access this DevNet Sandbox using the Cisco AnyConnect VPN Client.
+    - Cisco DevNet account
+    - Spark account – sign up at https://www.ciscospark.com/
+    - GitHub account
+    - ServiceNow developer account (optional)
+    - DevNet CSR1000V sandbox – provided, or reserved by you here: https://developer.cisco.com/site/sandbox/
+    - You will need Python 2.7 and 3.x installed
+    - requests and ncclient libraries
 
-### Lab Overview
+### The repo includes these files
 
-The application that will be created will detect any router configuration changes, the hostname of the device, the user that made the configurations and will create an approval request in Spark. 
-If the changes will be approved, they will become the new baseline configuration. 
-If the changes will not be approved, or no response received to the approval request, the router configuration will be restored to the previous baseline configuration.
+    - config.py - configuration file that includes account usernames and passwords
+    - eem_cli_config.txt - cli configuration for the CSR1000V router that will be used during the workshop
+    - save_base_config.py - script to establish the baseline configuration
+    - netconf_restconf.py - demonstrate how to manage the IOS XE device from Guest Shell using NETCONF and RESTCONF
+    - config_change.py - application code
 
-The router will also create a ServiceNow incident to record the changes and the response to the requested approval.
+### Application Workflow
+
+    - User makes IOS XE device configuration change
+    - Syslog triggers EEM Guest Shell Python script execution
+    - The config_change.py script will:
+        - Detect if a configuration change and what changed
+        - Collect the device hostname using RESTCONF
+        - Identify the user the made the change using Python CLI
+        - Create Spark room using REST APIs, invite Approver to room, post the above information to ask for approval
+        - If changes approved, save new configuration as baseline
+        - If not approved or no response, rollback to the previous baseline configuration
+        - Close the Spark room in 30 seconds
+        - Create ServiceNow incident to record all the above information
