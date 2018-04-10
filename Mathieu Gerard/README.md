@@ -46,7 +46,7 @@ In the venue config screen, on the right side, scroll down to retrieve your venu
 
 Go back to the home page then in the left venue select "API key" and create an API key.
 
-Download the Meraki floorplan configuration file. Usually you would get this from the Meraki portal but I've made a copy of it as I cannot grant everyone access to the Meraki network of the event. **TODO The file will be available after the network is deployed**.
+Download the Meraki floorplan configuration file. Usually you would get this from the Meraki portal but I've made a copy of it as I cannot grant everyone access to the Meraki network of the event. The config file is available in this repository.
 
 Clone the [github.com/IndoorLocation/meraki-indoor-location](https://github.com/IndoorLocation/meraki-indoor-location) repository on your machine.
 
